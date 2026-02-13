@@ -1,0 +1,84 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  /* ── Font ────────────────────────────────────────── */
+  --font-serif: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
+  --font-sans: var(--font-inter), "Inter", system-ui, sans-serif;
+
+  /* ── Brand Colors ────────────────────────────────── */
+  --color-rose-cipria:  #E8D5D0;
+  --color-rose-powder:  #DCC5BE;
+  --color-rose-dark:    #B89B94;
+  --color-gray-warm:    #8B7F7A;
+  --color-gray-light:   #F5F3F2;
+  --color-black-soft:   #2C2825;
+  --color-white-pure:   #FFFFFF;
+
+  /* ── Shadcn semantic tokens (mapped to brand) ────── */
+  --color-background:            var(--background);
+  --color-foreground:            var(--foreground);
+  --color-card:                  var(--card);
+  --color-card-foreground:       var(--card-foreground);
+  --color-popover:               var(--popover);
+  --color-popover-foreground:    var(--popover-foreground);
+  --color-primary:               var(--primary);
+  --color-primary-foreground:    var(--primary-foreground);
+  --color-secondary:             var(--secondary);
+  --color-secondary-foreground:  var(--secondary-foreground);
+  --color-muted:                 var(--muted);
+  --color-muted-foreground:      var(--muted-foreground);
+  --color-accent:                var(--accent);
+  --color-accent-foreground:     var(--accent-foreground);
+  --color-destructive:           var(--destructive);
+  --color-border:                var(--border);
+  --color-input:                 var(--input);
+  --color-ring:                  var(--ring);
+
+  /* ── Radius — PRD vuole bottoni quasi quadrati ───── */
+  --radius-sm:  0px;
+  --radius-md:  2px;
+  --radius-lg:  2px;
+  --radius-xl:  4px;
+  --radius-2xl: 4px;
+}
+
+:root {
+  --radius: 2px;
+
+  --background:           #FFFFFF;
+  --foreground:           #2C2825;
+  --card:                 #FFFFFF;
+  --card-foreground:      #2C2825;
+  --popover:              #FFFFFF;
+  --popover-foreground:   #2C2825;
+  --primary:              #2C2825;
+  --primary-foreground:   #FFFFFF;
+  --secondary:            #F5F3F2;
+  --secondary-foreground: #2C2825;
+  --muted:                #F5F3F2;
+  --muted-foreground:     #8B7F7A;
+  --accent:               #E8D5D0;
+  --accent-foreground:    #2C2825;
+  --destructive:          oklch(0.577 0.245 27.325);
+  --border:               #E8D5D0;
+  --input:                #E8D5D0;
+  --ring:                 #B89B94;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+    line-height: 1.7;
+  }
+  h1, h2, h3 {
+    font-family: var(--font-serif);
+    line-height: 1.2;
+  }
+}
